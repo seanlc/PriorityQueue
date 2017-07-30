@@ -33,9 +33,20 @@ void enqueue_test()
     myQ.print();
 }
 
+void dequeue_test()
+{
+    PriorityQueue myQ;
+    for(int i = 0; i < 20; ++i)
+        myQ.enqueue(i);
+    for(int i = 0; i < 10; ++i)
+        cout << myQ.dequeue() << endl;
+    myQ.print();
+}
+
 int main()
 {
 //    constr_destr_test();
-    enqueue_test();
+//    enqueue_test();
+    dequeue_test();
     return 0;
 }

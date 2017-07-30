@@ -53,7 +53,14 @@ class PriorityQueue{
     }
     void clear();
     bool contains(int n);
-    int dequeue();
+    int dequeue()
+    {
+        int returnVal = head->data;
+	Node * tmp = head;
+	head = head->next;
+	delete tmp;
+	return returnVal;
+    }
     int peek();
     int size();
     bool remove(int n);
