@@ -43,10 +43,28 @@ void dequeue_test()
     myQ.print();
 }
 
+void peek_test()
+{
+    PriorityQueue myQ;
+    for(int i = 0; i < 40; ++i)
+        myQ.enqueue(i);
+    cout << myQ.peek() << endl;
+}
+
+void size_test()
+{
+    PriorityQueue myQ;
+    for(int i = 0; i < 30; ++i)
+        myQ.enqueue(i);
+    cout << "size of queue is " << myQ.size() << endl;
+}
+
 int main()
 {
 //    constr_destr_test();
 //    enqueue_test();
-    dequeue_test();
+//    dequeue_test();
+//    peek_test();
+    size_test();
     return 0;
 }

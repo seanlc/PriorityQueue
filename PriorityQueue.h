@@ -10,9 +10,8 @@ struct Node{
 class PriorityQueue{
   public:
     PriorityQueue()
-    {
-        head = nullptr;
-    }
+    : head (nullptr), numNodes(0)
+    {}
     ~PriorityQueue()
     {
         deleteList();
@@ -50,6 +49,7 @@ class PriorityQueue{
 	        trav = trav->next;
 	    }
 	}
+	numNodes++;
     }
     void clear();
     bool contains(int n);
@@ -61,8 +61,17 @@ class PriorityQueue{
 	delete tmp;
 	return returnVal;
     }
-    int peek();
-    int size();
+    int peek()
+    {
+	if(head != nullptr)
+            return head->data;
+	else
+	    return -1;
+    }
+    int size()
+    {
+        return numNodes;
+    }
     bool remove(int n);
     void print()
     {
