@@ -51,8 +51,21 @@ class PriorityQueue{
 	}
 	numNodes++;
     }
-    void clear();
-    bool contains(int n);
+    void clear()
+    {
+        deleteList();
+    }
+    bool contains(int n)
+    {
+        Node * trav = head;
+	while(trav != nullptr)
+	{
+	    if(trav->data == n)
+	        return true;
+	    trav = trav->next;
+	}
+	return false;
+    }
     int dequeue()
     {
         int returnVal = head->data;
@@ -93,6 +106,7 @@ class PriorityQueue{
 	    tmp = head;
 	    head = head->next;
 	    delete tmp;
+	    numNodes--;
 	}
     }
 };

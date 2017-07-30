@@ -59,12 +59,34 @@ void size_test()
     cout << "size of queue is " << myQ.size() << endl;
 }
 
+void contains_test()
+{
+    PriorityQueue myQ;
+    for(int i = 0; i < 40; ++i)
+        myQ.enqueue(i);
+    cout << "searching for 23 (present): " << myQ.contains(23) << endl;
+    cout << "searching for 43 (not present): " << myQ.contains(43) << endl;
+}
+void clear_test()
+{
+    PriorityQueue myQ;
+    for(int i = 0; i < 40; ++i)
+        myQ.enqueue(i);
+    myQ.print();
+    myQ.clear();
+    cout << "after clear" << endl;
+    myQ.print();
+}
+
+
 int main()
 {
 //    constr_destr_test();
 //    enqueue_test();
 //    dequeue_test();
 //    peek_test();
-    size_test();
+//    size_test();
+//   contains_test(); 
+    clear_test();
     return 0;
 }
