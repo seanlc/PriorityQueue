@@ -85,7 +85,38 @@ class PriorityQueue{
     {
         return numNodes;
     }
-    bool remove(int n);
+    bool remove(int n)
+    {
+	Node * trail = nullptr;
+        Node * trav = head;
+
+        while(trav != nullptr)
+        {
+	    if ( trav->data == n)
+	        break;
+	    trail = trav;
+            trav = trav->next;
+        }
+
+        // case: head deletion
+        if(trav == head)
+        {
+            head = head->next;
+	    delete trav;
+	    return true;
+        }
+
+	// case: middle/end deletion
+        else if (trav != nullptr)
+	{
+	    trail->next = trav->next;
+	    delete trav;
+	    return true;    
+	}
+
+        // case: not found
+        return false;
+    }
     void print()
     {
         Node * trav = head;

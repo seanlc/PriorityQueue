@@ -78,6 +78,23 @@ void clear_test()
     myQ.print();
 }
 
+void remove_test()
+{
+    PriorityQueue myQ;
+    for(int i = 0; i < 40; ++i)
+        myQ.enqueue(i);
+    cout << "initial list: " << endl;
+    myQ.print();
+    myQ.remove(0);
+    cout << "after remove of head: " << endl;
+    myQ.print();
+    cout << "after remove of middle (20) : " << endl;
+    myQ.remove(20);
+    myQ.print();
+    cout << "after remove of tail: " << endl;
+    myQ.remove(39);
+    myQ.print();
+}
 
 int main()
 {
@@ -87,6 +104,7 @@ int main()
 //    peek_test();
 //    size_test();
 //   contains_test(); 
-    clear_test();
+//    clear_test();
+    remove_test();
     return 0;
 }
